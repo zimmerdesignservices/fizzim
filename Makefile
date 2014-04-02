@@ -21,14 +21,14 @@ all:
 	&& mkdir $${version}_jar \
 	&& cd $${version}_jar \
 	&& echo "Copying java files to $${version}_jar directory" \
-	&& cp -pr ../*.java ../org ../*.png ../compile.bash ./ \
+	&& cp -pr ../*.java ../org ../*.png ../Makefile ./ \
 	&& echo "Running javac " \
 	&& javac -target 1.5 *.java \
 	&& echo "Main-Class: FizzimGui" > manifest.txt \
 	&& echo "Creating jar file " \
 	&& mkdir src \
 	&& mv *.java src/ \
-	&& jar cvfm fizzim_v$${version}.jar manifest.txt *.class splash.png icon.png org/ src/ compile.bash > jar.log \
+	&& jar cvfm fizzim_v$${version}.jar manifest.txt *.class splash.png icon.png org/ src/ Makefile > jar.log \
 	&& echo "Copying jar file back to main directory" \
 	&& cp fizzim*.jar ../ \
 	&& echo done
