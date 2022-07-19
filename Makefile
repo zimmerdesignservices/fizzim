@@ -23,7 +23,7 @@ all:
 	&& echo "Copying java files to $${version}_jar directory" \
 	&& cp -pr ../*.java ../org ../*.png ../Makefile ./ \
 	&& echo "Running javac " \
-	&& javac -target 1.5 *.java \
+	&& javac -target 1.8 *.java \
 	&& echo "Main-Class: FizzimGui" > manifest.txt \
 	&& echo "Creating jar file " \
 	&& mkdir src \
